@@ -1,0 +1,32 @@
+import random
+i=0
+draw = 0
+score_comp = 0
+score_user = 0
+
+
+while(i<10):
+    i = i + 1
+    comp_list=["s","w","g"]
+    comp = random.choice(comp_list)
+
+    print("Enter 's' for Snake \n'w' for Water\n'g' for Gun")
+    user = input()
+    if comp == "s" and user == "w":
+        score_comp += 1
+    elif comp == "s" and user == "g":
+        score_user += 1
+    elif comp == "w" and user == "s":
+        score_user += 1
+    elif comp == "w" and user == "g":
+        score_comp += 1
+    elif comp == "g" and user == "s":
+        score_comp += 1
+    elif comp == "g" and user == "w":
+        score_user += 1
+    else:
+        draw += 1
+    print("Score of computer is:",score_comp,"\nScore of user is:",score_user,"\n No. ofdraws:",draw)
+
+
+print("Final scores are:\nComputer:",score_comp,"User:",score_user,"Draws:",draw)
